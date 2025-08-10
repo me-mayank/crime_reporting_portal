@@ -1,0 +1,1 @@
+This a Repository for the backend code of a crime reporting portal which can be used by the civilians to report the crimes
