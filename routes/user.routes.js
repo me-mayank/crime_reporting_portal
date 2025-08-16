@@ -6,7 +6,7 @@ const router = express.Router();
 //create new user
 router.post("/users", async(req,res) => {
     try{
-        const newUser = await User.create(req.body);//inserted data to DataBase
+        const newUser = await User.create(req.body.json);//inserted data to DataBase
         res.status(201).json(newUser);
     }
     catch(error){

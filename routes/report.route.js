@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.post("/report", async(req,res) => {
      try{
-        const newReport = await Report.create(req.body);//inserted report data in database
+        const newReport = await Report.create(req.body.json);//inserted report data in database
         res.status(201).json(newReport);
      }
      catch(error){
