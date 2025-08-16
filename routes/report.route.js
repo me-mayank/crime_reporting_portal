@@ -1,6 +1,6 @@
 import express from "express";
 import {Report} from "../models/report.model.js";
-import { PAGE_LIMIT, NUM_PAGES } from "../constants.js";
+import { PAGE_LIMIT, NUM_PAGES } from "../src/constants.js";
 
 const router = express.Router();
 
