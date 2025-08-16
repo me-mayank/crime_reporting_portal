@@ -21,6 +21,10 @@ app.use("/api", userRoutes);
 
 // Start the server (only once!)
 const PORT = process.env.PORT || 8000;
+
+app.get("/", async(req,res) => {
+    res.send("API IS WORKING !!!");
+});
 app.listen(PORT, () => {
     console.log(`SERVER IS RUNNING ON PORT ${PORT}`);
 });
