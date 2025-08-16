@@ -27,3 +27,5 @@ router.get("/reports", async(req,res) => {
         });
     }
 });
+
+export default router;
