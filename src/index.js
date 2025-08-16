@@ -21,12 +21,14 @@ connectDB();
 app.use("/api", userRoutes);
 app.use("/api", reportRoutes);
 
-// Start the server (only once!)
-const PORT = process.env.PORT || 8000;
 
 app.get("/", async(req,res) => {
     res.send("API IS WORKING !!!");
 });
+
+const PORT = process.env.PORT || 8000;
+
+// Start the server (only once!)
 app.listen(PORT, () => {
     console.log(`SERVER IS RUNNING ON PORT ${PORT}`);
 });
