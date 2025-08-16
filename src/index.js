@@ -2,11 +2,13 @@ import express from "express";
 import dotenv from "dotenv";
 import connectDB from "./db/index.js";
 import userRoutes from "../routes/user.routes.js";
+import cors from "cors";
 
 // Load environment variables
 dotenv.config({ path: "./.env" });
 
 const app = express();
+app.use(cors({ origin: "*" })); // "*" allows all origins
 
 // Middleware to parse JSON
 app.use(express.json());
