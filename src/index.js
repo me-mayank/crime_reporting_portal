@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import connectDB from "./db/index.js";
 import userRoutes from "../routes/user.routes.js";
+import reportRoutes from "../routes/report.route.js";
 import cors from "cors";
 
 // Load environment variables
@@ -18,6 +19,7 @@ connectDB();
 
 // Routes
 app.use("/api", userRoutes);
+app.use("/api", reportRoutes);
 
 // Start the server (only once!)
 const PORT = process.env.PORT || 8000;
