@@ -3,6 +3,9 @@ import {Report} from "../models/report.model.js";
 
 const router = express.Router();
 
+const app = express();
+app.use(express.json());
+
 router.post("/report", async(req,res) => {
      try{
         const newReport = await Report.create(req.body.json);//inserted report data in database

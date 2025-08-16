@@ -3,6 +3,10 @@ import {User} from "../models/user.model.js";
 
 const router = express.Router();
 
+const app = express();
+
+app.use(express.json());
+
 //create new user
 router.post("/users", async(req,res) => {
     try{
