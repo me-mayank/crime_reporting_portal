@@ -18,7 +18,7 @@ router.post("/reports", async(req,res) => {
 // get all reports 
 router.get("/reports", async(req,res) => {
     try{
-        const report = Report.find();
+        const report = await Report.find();
         res.json(report);
     }
     catch(error){
