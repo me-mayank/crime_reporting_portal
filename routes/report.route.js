@@ -18,7 +18,8 @@ router.post("/reports", async(req,res) => {
 // get all reports 
 router.get("/reports", async(req,res) => {
     try{
-        const report = await Report.find();
+        // fetching data of reports along with the reporter data
+        const report = await Report.find().populate("reporter", "name email role");
         res.json(report);
     }
     catch(error){
