@@ -38,4 +38,4 @@ const reportSchema = new mongoose.Schema({
 },{timestamps: true}
 );
 
-export const report = mongoose.model("report", reportSchema);
+export const Report = mongoose.model("Report", reportSchema);
