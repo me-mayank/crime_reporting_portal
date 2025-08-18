@@ -55,7 +55,8 @@ router.get("/reports", async(req,res) => {
             start.setHours(0,0,0,0);// start of a new date
             const end = new Date(date);
             end.setHours(23,59,59,999);// end of that date
-            filter.dateReported = { $gte: start, $lte: end};// gte = date greater than equal to start
+            filter.dateReported = { $gte: start, $lte: end};
+            // gte = date greater than equal to start
             // lte: date less than equal to end
         }
         else if(startDate || endDate){
