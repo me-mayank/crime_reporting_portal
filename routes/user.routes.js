@@ -8,9 +8,23 @@ const router = express.Router();
 router.post("/users", async (req, res) => {
   try {
     const newUser = await User.create(req.body); 
+
+    res.status(201).json({
+      success: true,
+      message: "User created Successfully !!",
+      date: {
+        id: newUser._id,
+        name: newUser.name,
+        email: newUser.email
+      }
+    });
     res.status(201).json(newUser);
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    res.status(400).json({ 
+      success: false,
+      message: "Failed to Create User",
+      error: error.message 
+    });
   }
 });
 
