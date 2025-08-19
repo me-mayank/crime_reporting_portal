@@ -1,7 +1,7 @@
 import express from "express";
 import jwt from "jsonwebtoken";
 import {User} from "../models/user.model.js";
-import { compare } from "bcryptjs";
+//import { compare } from "bcryptjs";
 
 const router = express.Router();
 
@@ -18,7 +18,7 @@ router.post("/login", async(req,res) => {
         }
 
         //checking password 
-        const isMatch = await compare(password, user.password);
+        const isMatch = await password === user.password;
         if(!isMatch){
             return res.status(400).json({
                 message: "INVALID PASSWORD FOR THIS EMAIL !!"
