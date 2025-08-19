@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import connectDB from "./db/index.js";
 import userRoutes from "../routes/user.routes.js";
 import reportRoutes from "../routes/report.route.js";
+import authRoutes from "../routes/auth.routes.js";
 import cors from "cors";
 
 // Load environment variables
@@ -18,8 +19,9 @@ app.use(express.json());
 connectDB();
 
 // Routes
-app.use("/api", userRoutes);
-app.use("/api", reportRoutes);
+app.use("/api", userRoutes); // route for user creation
+app.use("/api", reportRoutes);// route for report creation 
+app.use("/api/auth", authRoutes);// route for user login and authentication
 
 
 app.get("/", async(req,res) => {
