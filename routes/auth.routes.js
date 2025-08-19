@@ -18,7 +18,7 @@ router.post("/login", async(req,res) => {
         }
 
         //checking password 
-        const isMatch = compare(password, user.password);
+        const isMatch = await compare(password, user.password);
         if(!isMatch){
             return res.status(400).json({
                 message: "INVALID PASSWORD FOR THIS EMAIL !!"
