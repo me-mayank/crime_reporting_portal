@@ -1,6 +1,6 @@
 import express from "express";
 import jwt from "jsonwebtoken";
-import User from "../models/user.model.js";
+import {User} from "../models/user.model.js";
 import { compare } from "bcryptjs";
 
 const router = express.Router();
